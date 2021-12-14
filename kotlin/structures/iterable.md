@@ -26,3 +26,29 @@ Retain only elements of a specified type.
 ```kotlin
 listOf("a", 1, "b", true).filterIsInstance<String>() // ["a", "b"]
 ```
+
+## Remove First N Elements
+
+Remove the first N elements.
+
+```kotlin
+listOf("a", "b", "c").drop(1) // ["b", "c"]
+listOf("a", "b", "c").drop(2) // ["c"]
+```
+
+## Remove Last N Elements
+
+Remove the last N elements.
+
+```kotlin
+listOf("a", "b", "c").dropLast(1) // ["a", "b"]
+listOf("a", "b", "c").dropLast(2) // ["a"]
+```
+
+## Group by Frequency
+
+Count the frequency each element shows up in the list.
+
+```kotlin
+listOf("a", "b", "a", "c").groupingBy { it }.eachCount() // {a: 2, b: 1, c: 1}
+```
