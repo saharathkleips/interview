@@ -4,7 +4,7 @@ Read a file as input.
 
 ## Read Lines
 
-Load a file by line as a `List<String>` where each string is a new line.
+Load a file by line where each string is a new line.
 
 ```kotlin
 import java.io.File
@@ -12,6 +12,10 @@ import java.io.File
 val input: List<String> = File("input.txt")
   .bufferedReader()
   .readLines()
+
+val input: List<String> = File("input.txt")
+  .bufferedReader()
+  .lineSequence()
 ```
 
 ## Generate Sequence
