@@ -12,8 +12,12 @@ import java.io.File
 val input: List<String> = File("input.txt")
   .bufferedReader()
   .readLines()
+```
 
-val input: List<String> = File("input.txt")
+```kotlin
+import java.io.File
+
+val input: Sequence<String> = File("input.txt")
   .bufferedReader()
   .lineSequence()
 ```

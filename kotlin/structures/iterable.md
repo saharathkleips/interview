@@ -52,3 +52,11 @@ Count the frequency each element shows up in the list.
 ```kotlin
 listOf("a", "b", "a", "c").groupingBy { it }.eachCount() // {a: 2, b: 1, c: 1}
 ```
+
+## Partition
+
+Split the list into two by a condition.
+
+```kotlin
+listOf(1,2,3,4,5).partition { it % 2 == 0 } // Pair([2,4], [1,3,5])
+```
