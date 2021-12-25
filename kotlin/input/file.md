@@ -38,3 +38,15 @@ val input: List<String> = Scanner(File("input.txt"))
     .toList()
   }
 ```
+
+## Read Entire File
+
+Load the entire file as a single string.
+
+```kotlin
+import java.io.File
+
+val input: List<String> = File("input.txt")
+  .bufferedReader()
+  .readText()
+```
