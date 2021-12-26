@@ -1,0 +1,1 @@
+![Victory](AdventOfCode2021.png)
