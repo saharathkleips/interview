@@ -60,3 +60,11 @@ Split the list into two by a condition.
 ```kotlin
 listOf(1,2,3,4,5).partition { it % 2 == 0 } // Pair([2,4], [1,3,5])
 ```
+
+## Group Elements by Condition
+
+Group the elements of the list into a map where the key is the condition.
+
+```kotlin
+listOf(1,2,3,4,5,6).groupBy { it % 3 } // {1: [1,4], 2: [2,5], 0: [3,6]}
+```
