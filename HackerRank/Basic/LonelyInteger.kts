@@ -49,3 +49,13 @@ fun main(/*args: Array<String>*/) {
 }
 
 main()
+
+/* Notes
+
+Similar to SparseArrays, we have to visit each element so it is O(n).
+We can just group each element by their frequencies and return the element
+that only showed up once.
+
+We can actually do this problem in constant space by XOR-ing each element.
+
+*/

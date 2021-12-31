@@ -71,3 +71,10 @@ fun main(/*args: Array<String>*/) {
 }
 
 main()
+
+/* Notes
+
+Best we can do is O(n * m) since we have to visit every element. Kotlin provides an easy way
+to group by the frequency of each element by doing `groupingBy { it }.eachCount()`.
+
+*/
