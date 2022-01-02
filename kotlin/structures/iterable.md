@@ -53,6 +53,14 @@ Count the frequency each element shows up in the list.
 listOf("a", "b", "a", "c").groupingBy { it }.eachCount() // {a: 2, b: 1, c: 1}
 ```
 
+## Window
+
+Break the list into a series of contiguous sliding windows.
+
+```kotlin
+listOf(1,2,3,4).windowed(size = 2) // [[1,2],[2,3],[3,4]]
+```
+
 ## Partition
 
 Split the list into two by a condition.
