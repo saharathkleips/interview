@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: local
+  name: postgres-pod
+spec:
+  containers:
+    - name: postgres
+      image: postgres:12
+      env:
+        - name: "POSTGRES_USER"
+          value: "postgres"
+        - name: "POSTGRES_PASSWORD"
+          value: "postgres"
+      ports:
+        - name: postgres-port
+          containerPort: 5432
+          hostPort: 5432
+      volumeMounts:
+        - name: postgres-volume
+          mountPath: /usr/share/postgres/data
+  volumes:
+    - name: postgres-volume
+      hostPath:
+        path: postgres
+        type: DirectoryOrCreate
