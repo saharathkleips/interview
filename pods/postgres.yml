@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   labels:
     app: local
-  name: postgres-pod
+  name: local-postgres
 spec:
   containers:
     - name: postgres
