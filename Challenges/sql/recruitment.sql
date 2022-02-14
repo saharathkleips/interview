@@ -26,13 +26,13 @@ VALUES (1, 'Intuit', 10, 20),
 -- the number of distinct companies they applied to.
 -- The result should contain the id of the candidate, name of the candidate,
 -- and number compnies they applied to, ordered by id.
-
---- TODO ---
---- id  | name   | companies
---- 10  | lara   | 2
---- 25  | taylor | 0
---- 113 | paul   | 1
-
+SELECT candidates.id,
+    candidates.name,
+    COUNT(DISTINCT reports.company) as companies
+FROM reports
+    RIGHT JOIN candidates ON reports.candidate_id = candidates.id
+GROUP BY candidates.id
+ORDER BY candidates.id ASC;
 ---
 DROP TABLE candidates,
 reports;
