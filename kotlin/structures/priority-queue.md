@@ -1,12 +1,32 @@
 # Priority Queue
 
 Similar to a queue, but elements are always sorted in their natural order.
+We can utilize the priority queue as a min-heap or a max-heap.
+`PriorityQueue` does not guarantee iteration order, so do not expect something like printing to work correctly.
 
 ## Instantiate
+
+The default instantiation is a min-heap. Pass in your own `Comparator` to configure the behavior.
 
 ```kotlin
 import java.util.PriorityQueue
 
+val priorityQueue = PriorityQueue<Int>()
+```
+
+### Min-Heap
+
+The smallest number is always on top.
+
+```kotlin
+val priorityQueue = PriorityQueue<Int> { a, b -> a - b }
+```
+
+### Max-Heap
+
+The largest number is always on top.
+
+```kotlin
 val priorityQueue = PriorityQueue<Int> { a, b -> b - a }
 ```
 
