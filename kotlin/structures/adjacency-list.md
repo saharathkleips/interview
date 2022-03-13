@@ -3,6 +3,9 @@
 A structure for representing a graph by storing each individual node's relation
 to other nodes within the graph.
 
+Adjacency lists are useful for when nodes in the aggregate need to be operated on, as
+the adjacency list offers constant time access to each node. 
+
 Imagine the following graph:
 
 ```mermaid
