@@ -4,12 +4,10 @@ Provides first-in-first-out (FIFO) operations.
 
 ## Instantiate
 
-Kotlin uses a double ended queue for queue related operations.
+Kotlin uses a generic mutable list to represent a queue.
 
 ```kotlin
-import kotlin.collections.ArrayDeque
-
-val deque = ArrayDeque()
+val list = mutableListOf<Int>()
 ```
 
 ## Enqueue
@@ -17,9 +15,9 @@ val deque = ArrayDeque()
 Add an item to the end of the queue.
 
 ```kotlin
-deque.addLast(1) // [1]
-deque.addLast(2) // [1,2]
-deque.addLast(3) // [1,2,3]
+list.add(1) // [1]
+list.add(2) // [1,2]
+list.add(3) // [1,2,3]
 ```
 
 ## Dequeue
@@ -27,9 +25,9 @@ deque.addLast(3) // [1,2,3]
 Remove an item from the front of the queue.
 
 ```kotlin
-deque.removeFirst() // 1 - [2,3]
-deque.removeFirst() // 2 - [3]
-deque.removeFirst() // 3 - []
+list.removeAt(0) // 1 - [2,3]
+list.removeAt(0) // 2 - [3]
+list.removeAt(0) // 3 - []
 ```
 
 ## Peek
@@ -37,5 +35,5 @@ deque.removeFirst() // 3 - []
 Return the element from the front of the queue.
 
 ```kotlin
-deque.first()
+list.first()
 ```

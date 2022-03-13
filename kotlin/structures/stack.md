@@ -4,12 +4,10 @@ Provides last-in-first-out (LIFO) operations.
 
 ## Instantiate
 
-Kotlin uses a double ended queue for stack related operations.
+Kotlin uses a generic mutable list to represent a stack.
 
 ```kotlin
-import kotlin.collections.ArrayDeque
-
-val deque = ArrayDeque()
+val list = mutableListOf<Int>()
 ```
 
 ## Push
@@ -17,9 +15,9 @@ val deque = ArrayDeque()
 Add an item to the top of the stack.
 
 ```kotlin
-deque.addFirst(1) // [1]
-deque.addFirst(2) // [2,1]
-deque.addFirst(3) // [3,2,1]
+list.add(1) // [1]
+list.add(2) // [1,2]
+list.add(3) // [1,2,3]
 ```
 
 ## Pop
@@ -27,9 +25,9 @@ deque.addFirst(3) // [3,2,1]
 Remove an item from the top of the stack.
 
 ```kotlin
-deque.removeFirst() // 3 - [2,1]
-deque.removeFirst() // 2 - [1]
-deque.removeFirst() // 1 - []
+list.removeLast() // 3 - [1,2]
+list.removeLast() // 2 - [1]
+list.removeLast() // 1 - []
 ```
 
 ## Peek
@@ -37,5 +35,5 @@ deque.removeFirst() // 1 - []
 Return the element at the top of the stack.
 
 ```kotlin
-deque.first()
+list.last()
 ```
