@@ -6,7 +6,7 @@ to other nodes within the graph.
 Imagine the following graph:
 
 ```mermaid
-graph TD;
+graph LR;
   1-->2;
   1-->3;
   1-->4;
