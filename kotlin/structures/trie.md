@@ -1,6 +1,6 @@
 # Trie 
 
-A tree speciailized in storing and re_trie_ving data that can be reprsented as a collection.
+A tree speciailized in storing and re-_trie_-ving data that can be reprsented as a collection.
 Commonly used when words and dictionaries are involved.
 
 Here is a trie containing the words "cat", "cut", "cute", "to", and "b":
