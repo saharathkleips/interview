@@ -2,9 +2,6 @@
 
 A tree where each node has at most two children, left and right.
 
-A common binary tree is a binary-search tree, where each node's left node contains
-"less than" values and a node's right node contains "greater than" values.
-
 Imagine the following binary-search tree:
 
 ```mermaid
@@ -112,4 +109,33 @@ fun <T> BinaryNode<T>.postorder(visit: (T) -> Unit): Unit {
 }
 
 root.postorder(::println)
+```
+
+## Contains (Binary Search)
+
+Checks whether a comparable element is within the binary tree.
+
+```kotlin
+operator fun <T : Comparable<T>> BinaryNode<T>.contains(element: T): Boolean = when {
+    value < element -> right?.contains(element) ?: false
+    value > element -> left?.contains(element) ?: false
+    else -> true
+}
+```
+
+## Add (Comparable)
+
+Adds a comparable element to the binary tree.
+
+```kotlin
+fun <T : Comparable<T>> BinaryNode<T>.add(element: T): Unit {
+    if (value < element) {
+        if (right == null) right = BinaryNode(element)
+        else right?.add(element)
+    }
+    else if (value > element) {
+        if (left == null) left = BinaryNode(element)
+        else left?.add(element)
+    }
+}
 ```
