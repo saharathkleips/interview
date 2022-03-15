@@ -47,3 +47,47 @@ fun <T> adjacencyListOf(vararg pairs: Pair<T, T>): MutableMap<T, MutableList<T>>
 
 adjacencyListOf(1 to 2, 1 to 3, 1 to 4, 2 to 4, 2 to 5, 4 to 3, 5 to 4)
 ```
+
+## Breadth-First Search
+
+Visit all of the nodes at the depth before advancing to the next depth. 
+We can utilize a queue to achieve the "breadth" and a visited-set to prevent cycles.
+
+```kotlin
+fun <T> Map<T, List<T>>.bfs(): Unit {
+    val visited: MutableSet<T> = mutableSetOf()
+    val queue: MutableList<T> = mutableListOf(keys.first())
+
+    while (queue.isNotEmpty()) {
+        queue.removeAt(0).takeIf { it !in visited }?.let {
+            
+            // -- Do Stuff --
+
+            this[it]?.forEach(queue::add)
+            visited.add(it)
+        }
+    }
+}
+```
+
+## Depth-First Search
+
+Visit a single edge to the end before visiting any other nodes.
+We can utilize a stack to achieve the "depth" and a visited-set to prevent cycles.
+
+```kotlin
+fun <T> Map<T, List<T>>.dfs(): Unit {
+    val visited: MutableSet<T> = mutableSetOf()
+    val stack: MutableList<T> = mutableListOf(keys.first())
+
+    while (stack.isNotEmpty()) {
+        stack.removeLast().takeIf { it !in visited }?.let {
+            
+            // -- Do Stuff --
+
+            this[it]?.forEach(stack::add)
+            visited.add(it)
+        }
+    }
+}
+```
