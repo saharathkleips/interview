@@ -27,7 +27,7 @@ to `String` as a collection of that generic type. However, this one just assumes
 class Trie {
     data class Node(
         val key: Char,
-        var word: String? = null, 
+        var end: Boolean = false, 
         val children: MutableMap<Char, Node> = mutableMapOf(),
     )
     
@@ -42,7 +42,7 @@ Inserts a word into the trie.
 ```kotlin
 fun Trie.insert(word: String) {
     word.fold(root) { node, char -> node.children.getOrPut(char) { Trie.Node(char) } }
-        .word = word
+        .end = true
 }
 ```
 
@@ -53,7 +53,7 @@ Check if the trie contains a given word.
 ```kotlin
 operator fun Trie.contains(word: String): Boolean =
     word.fold(root) { node, char -> node.children.getOrElse(char) { return false } }
-        .word == word
+        .end == true
 ```
 
 ## Starts With
@@ -63,7 +63,7 @@ Collect all words that starts with a given prefix. e.g. "autocomplete".
 ```kotlin
 fun Trie.startsWith(prefix: String): List<String> {
     fun Trie.Node.collectAll(prefix: String): List<String> =
-        (if (word != null) mutableListOf(word!!) else mutableListOf()).apply {
+        (if (end) mutableListOf(prefix) else mutableListOf()).apply {
             addAll(children.values.flatMap { it.collectAll(prefix + it.key) })
         }
     
