@@ -29,3 +29,13 @@ fun <T> Map<T, List<T>>.bipartite(): Boolean {
     }
     return true
 }
+
+listOf(
+    adjacencyListOf('a' to 'b', 'b' to 'c'), // true
+    adjacencyListOf('a' to 'b', 'b' to 'c', 'c' to 'a'), // false
+    adjacencyListOf('a' to 'b', 'b' to 'c', 'd' to 'a'), // true
+    adjacencyListOf('a' to 'b', 'b' to 'c', 'd' to 'a', 'e' to 'd'), // true
+    adjacencyListOf('a' to 'b', 'b' to 'c', 'd' to 'a', 'd' to 'b'), // false
+)
+    .map { it.bipartite() }
+    .forEach(::println)
