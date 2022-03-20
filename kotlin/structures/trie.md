@@ -1,4 +1,4 @@
-# Trie 
+# Trie
 
 A tree speciailized in storing and re-_trie_-ving data that can be reprsented as a collection.
 Commonly used when words and dictionaries are involved.

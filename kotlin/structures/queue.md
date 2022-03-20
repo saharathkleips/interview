@@ -25,9 +25,9 @@ list.add(3) // [1,2,3]
 Remove an item from the front of the queue.
 
 ```kotlin
-list.removeAt(0) // 1 - [2,3]
-list.removeAt(0) // 2 - [3]
-list.removeAt(0) // 3 - []
+list.removeFirst() // 1 - [2,3]
+list.removeFirst() // 2 - [3]
+list.removeFirst() // 3 - []
 ```
 
 ## Peek
