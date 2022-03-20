@@ -91,3 +91,16 @@ fun <T> Map<T, List<T>>.dfs(): Unit {
     }
 }
 ```
+
+## Transpose
+
+Reverse all of the edges in a directed graph.
+
+```kotlin
+fun <T> Map<T, List<T>>.transpose(): MutableMap<T, MutableList<T>> =
+    mutableMapOf<T, MutableList<T>>().apply {
+        this@transpose.entries.forEach { (key, value) ->
+            value.forEach { getOrPut(it, ::mutableListOf).add(key) }
+        }
+    }
+```
