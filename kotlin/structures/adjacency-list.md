@@ -59,11 +59,11 @@ fun <T> Map<T, List<T>>.bfs(): Unit {
     val queue: MutableList<T> = mutableListOf(keys.first())
 
     while (queue.isNotEmpty()) {
-        queue.removeAt(0).takeIf { it !in visited }?.let {
+        queue.removeFirst().takeIf { it !in visited }?.let {
             
             // -- Do Stuff --
 
-            this[it]?.forEach(queue::add)
+            this[it]?.let(queue::addAll)
             visited.add(it)
         }
     }
@@ -85,7 +85,7 @@ fun <T> Map<T, List<T>>.dfs(): Unit {
             
             // -- Do Stuff --
 
-            this[it]?.forEach(stack::add)
+            this[it]?.let(stack::addAll)
             visited.add(it)
         }
     }
