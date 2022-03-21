@@ -4,7 +4,7 @@ A structure for representing a graph by storing each individual node's relation
 to other nodes within the graph.
 
 Adjacency lists are useful for when nodes in the aggregate need to be operated on, as
-the adjacency list offers constant time access to each node. 
+the adjacency list offers constant time access to each node.
 
 Imagine the following graph:
 
@@ -50,7 +50,7 @@ adjacencyListOf(1 to 2, 1 to 3, 1 to 4, 2 to 4, 2 to 5, 4 to 3, 5 to 4)
 
 ## Breadth-First Search
 
-Visit all of the nodes at the depth before advancing to the next depth. 
+Visit all of the nodes at the depth before advancing to the next depth.
 We can utilize a queue to achieve the "breadth" and a visited-set to prevent cycles.
 
 ```kotlin

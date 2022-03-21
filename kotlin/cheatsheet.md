@@ -18,7 +18,7 @@ fun <T> adjacencyListOf(vararg pairs: Pair<T, T>): MutableMap<T, MutableList<T>>
 fun <T> Map<T, List<T>>.search(): Unit {
     val visited: MutableSet<T> = mutableSetOf()
     val list: MutableList<T> = mutableListOf(keys.first())
-    while (queue.isNotEmpty()) {
+    while (list.isNotEmpty()) {
         list.removeLast().takeIf { it !in visited }?.let { // Depth
         list.removeFirst().takeIf { it !in visited }?.let { // Breadth
             // -- Do Stuff --
@@ -32,7 +32,7 @@ fun <T> Map<T, List<T>>.search(): Unit {
 ## Stack / Queue
 
 ```kotlin
-val list = mutableListOf<>()
+val list = mutableListOf<Int>()
 list.add(1) // Push / Enqueue
 list.removeFirst() // Dequeue Queue (FIFO)
 list.removeLast() // Pop Stack (LIFO)
