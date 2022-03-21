@@ -2,6 +2,8 @@
 
 Collection of notes and snippets useful for tackling programming challenges.
 
+- [Cheetsheet](cheetsheet.md)
+
 ## Install
 
 - [Obsidian](https://obsidian.md/)
