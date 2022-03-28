@@ -42,6 +42,35 @@ val root = BinaryNode(
 )
 ```
 
+## Add (Comparable)
+
+Adds a comparable element to the binary tree.
+
+```kotlin
+fun <T : Comparable<T>> BinaryNode<T>.add(element: T): Unit {
+    if (value < element) {
+        if (right == null) right = BinaryNode(element)
+        else right?.add(element)
+    }
+    else if (value > element) {
+        if (left == null) left = BinaryNode(element)
+        else left?.add(element)
+    }
+}
+```
+
+## Contains (Binary Search)
+
+Checks whether a comparable element is within the binary tree.
+
+```kotlin
+operator fun <T : Comparable<T>> BinaryNode<T>.contains(element: T): Boolean = when {
+    value < element -> right?.contains(element) ?: false
+    value > element -> left?.contains(element) ?: false
+    else -> true
+}
+```
+
 ## Pre-Order Traversal
 
 Visit the root, left, and then right.
@@ -109,33 +138,4 @@ fun <T> BinaryNode<T>.postorder(visit: (T) -> Unit): Unit {
 }
 
 root.postorder(::println)
-```
-
-## Contains (Binary Search)
-
-Checks whether a comparable element is within the binary tree.
-
-```kotlin
-operator fun <T : Comparable<T>> BinaryNode<T>.contains(element: T): Boolean = when {
-    value < element -> right?.contains(element) ?: false
-    value > element -> left?.contains(element) ?: false
-    else -> true
-}
-```
-
-## Add (Comparable)
-
-Adds a comparable element to the binary tree.
-
-```kotlin
-fun <T : Comparable<T>> BinaryNode<T>.add(element: T): Unit {
-    if (value < element) {
-        if (right == null) right = BinaryNode(element)
-        else right?.add(element)
-    }
-    else if (value > element) {
-        if (left == null) left = BinaryNode(element)
-        else left?.add(element)
-    }
-}
 ```
