@@ -2,7 +2,7 @@
 
 Collection of notes and snippets useful for tackling programming challenges.
 
-- [Cheetsheet](cheatsheet.md)
+- [Cheatsheet](cheatsheet.md)
 
 ## Install
 
