@@ -1,5 +1,20 @@
 # Cheatsheet
 
+| Data Structure | Get    | Contains | Add    | Remove | Space  |
+|----------------|--------|----------|--------|--------|--------|
+| Array          | 1      | n        | n      | n      | n      |
+| Stack          | 1      | N/A      | 1      | 1      | n      |
+| Queue          | 1      | N/A      | 1      | 1      | n      |
+| Linked List    | n      | n        | 1      | 1      | n      |
+| Linked Map     | 1      | 1        | 1      | 1      | 2n     |
+| Map            | 1      | 1        | 1      | 1      | n      |
+| Set            | N/A    | 1        | 1      | 1      | n      |
+| Heap           | 1      | N/A      | log(n) | log(n) | n      |
+| Binary Tree    | n      | n        | n      | n      | n      |
+| Tree Map       | log(n) | log(n)   | log(n) | log(n) | n      |
+| Trie           | n      | n        | n      | n      | n      |
+| Adjacency List | 1      | 1        | 1      | O(e)   | O(n+e) |
+
 ## Adjacency List (Graphs)
 
 ```kotlin
