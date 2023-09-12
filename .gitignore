@@ -13,5 +13,8 @@
 # VSCode
 .vscode
 
+# IntelliJ
+.idea
+
 # Scratch
 scratch.kts
